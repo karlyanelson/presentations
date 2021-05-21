@@ -3,12 +3,14 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
-    "export": "slidev export"
+    "export": "slidev export",
+    "help": "slidev --help"
   },
   "dependencies": {
     "@slidev/cli": "^0.11.2",
-    "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
+    "@slidev/theme-default": "^0.7.4",
+    "@slidev/theme-seriph": "^0.7.1",
+    "playwright-chromium": "^1.11.1"
   },
   "name": "template"
 }
