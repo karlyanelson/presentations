@@ -8,7 +8,7 @@ module.exports = function (eleventyConfig) {
 
   // Copy over assets/ folder
   eleventyConfig.addPassthroughCopy({
-    "src/presentations/markdown/": "./presentations/markdown/",
+    "src/presentations/fonts/": "./presentations/fonts/",
   });
 
   // https://www.11ty.dev/docs/quicktips/inline-css/

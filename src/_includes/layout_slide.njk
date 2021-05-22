@@ -1,24 +1,42 @@
 ---
-layout: layout_base.njk
 ---
+{% set css %}
+    {% include "../../node_modules/reveal.js/dist/reset.css" %}
+    {% include "../../node_modules/reveal.js/dist/reveal.css" %}
+    {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+    {% include "../../node_modules/reveal.js/plugin/highlight/monokai.css" %}
+{% endset %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% if title %}{{title}}, {% endif %}Presentations</title>        
+        {% include "meta.html" %}
+        <style type="text/css">
+            {{ css | cssmin | safe }}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+          <div class="slides">
+            {{ content | safe }}
+          </div>
+        </div>
 
-<div class="reveal">
-  <div class="slides">
-    {{ content | safe }}
-  </div>
-</div>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/dist/reveal.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/markdown/markdown.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/highlight/highlight.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/dist/reveal.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/markdown/markdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/highlight/highlight.js"></script>
+        <script>
+          let deck = new Reveal({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            plugins: [RevealMarkdown, RevealHighlight],
+          });
+          deck.initialize();
+        </script>
+    </body>
+</html>
 
-<script>
-  let deck = new Reveal({
-    controls: true,
-    progress: true,
-    history: true,
-    center: true,
-    plugins: [RevealMarkdown, RevealHighlight],
-  });
-  deck.initialize();
-</script>
+

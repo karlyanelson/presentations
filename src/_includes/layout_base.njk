@@ -1,23 +1,16 @@
 ---
 ---
 {% set css %}
-    {% include "../../node_modules/reveal.js/dist/reset.css" %}
-    {% include "../../node_modules/reveal.js/dist/reveal.css" %}
-    {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
-    {% include "../../node_modules/reveal.js/plugin/highlight/monokai.css" %}
+    {% include "styles.css" %}
 {% endset %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% if title %}{{title}}, {% endif %}Presentations</title>        
+        <title>{% if title %}{{title}}, {% endif %}Presentations</title>      
+        {% include "meta.html" %}
         <style type="text/css">
             {{ css | cssmin | safe }}
         </style>
-        <meta charset="UTF-8">
-        <meta name="description" content="Karly Nelson's Presentations">
-        <meta name="keywords" content="Presentations, UX, Design, HTML, CSS, JS, Javscript">
-        <meta name="author" content="Karly Nelson">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         {{ content | safe }}
