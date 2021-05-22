@@ -2,10 +2,11 @@
   "name": "presentations",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "dependencies": {},
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "reveal.js": "^4.1.1"
   },
   "scripts": {
@@ -23,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/karlyanelson/presentations/issues"
   },
-  "homepage": "https://github.com/karlyanelson/presentations#readme"
+  "homepage": "https://github.com/karlyanelson/presentations#readme",
+  "staticFiles": {
+    "staticPath": [
+      "src/markdown"
+    ]
+  }
 }
