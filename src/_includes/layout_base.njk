@@ -1,0 +1,25 @@
+---
+---
+{% set css %}
+    {% include "../../node_modules/reveal.js/dist/reset.css" %}
+    {% include "../../node_modules/reveal.js/dist/reveal.css" %}
+    {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+    {% include "../../node_modules/reveal.js/plugin/highlight/monokai.css" %}
+{% endset %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% if title %}{{title}}, {% endif %}Presentations</title>        
+        <style type="text/css">
+            {{ css | cssmin | safe }}
+        </style>
+        <meta charset="UTF-8">
+        <meta name="description" content="Vanilla Javascript Academy Project Showcase">
+        <meta name="keywords" content="HTML, CSS, JS, Javscript, Vanilla JavaScript">
+        <meta name="author" content="Karly Nelson">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {{ content | safe }}
+    </body>
+</html>
