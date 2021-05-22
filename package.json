@@ -1,33 +1,15 @@
 {
-  "name": "presentations",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "dependencies": {},
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "reveal.js": "^4.1.1"
-  },
+  "name": "learn-starter",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development parcel src/index.html",
-    "build": "NODE_ENV=production parcel build src/index.html",
-    "clean": "rm -rf dist && rm -rf .cache"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/karlyanelson/presentations.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/karlyanelson/presentations/issues"
-  },
-  "homepage": "https://github.com/karlyanelson/presentations#readme",
-  "staticFiles": {
-    "staticPath": [
-      "src/markdown"
-    ]
+  "dependencies": {
+    "next": "^10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   }
 }
