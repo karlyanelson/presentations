@@ -1,0 +1,24 @@
+---
+layout: layout_base.njk
+---
+
+<div class="reveal">
+  <div class="slides">
+    {{ content | safe }}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/dist/reveal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/highlight/highlight.js"></script>
+
+<script>
+  let deck = new Reveal({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    plugins: [RevealMarkdown, RevealHighlight],
+  });
+  deck.initialize();
+</script>
