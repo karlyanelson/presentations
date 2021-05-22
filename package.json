@@ -11,8 +11,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development parcel src/index.html --out-dir dist/presentations",
-    "build": "NODE_ENV=production parcel build src/index.html --out-dir dist/presentations",
+    "dev": "NODE_ENV=development parcel src/index.html",
+    "build": "NODE_ENV=production parcel build src/index.html --public-url ./presentations/ --out-dir dist/presentations",
     "clean": "rm -rf dist && rm -rf .cache"
   },
   "repository": {
