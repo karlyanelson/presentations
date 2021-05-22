@@ -1,11 +1,23 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import Reveal from "reveal.js";
-import Markdown from "reveal.js/plugin/markdown/markdown.js";
-import Highlight from "reveal.js/plugin/highlight/highlight.js";
+import dynamic from "next/dynamic";
+
+const Reveal = dynamic(() => import("reveal.js"), { ssr: false });
+
+const Markdown = dynamic(
+  () => import("reveal.js/plugin/markdown/markdown.js"),
+  { ssr: false }
+);
+
+const Highlight = dynamic(
+  () => import("reveal.js/plugin/highlight/highlight.js"),
+  { ssr: false }
+);
 
 export default function Home() {
   useEffect(() => {
+    console.log("navigator", navigator);
     if (typeof window !== "undefined") {
       let deck = new Reveal({
         controls: true,
@@ -24,8 +36,8 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <h1>{siteTitle}</h1>
-      <div class="reveal">
-        <div class="slides">
+      <div className="reveal">
+        <div className="slides">
           <section
             data-markdown="./markdown.md"
             data-separator="---"
