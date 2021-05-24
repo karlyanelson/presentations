@@ -2,13 +2,14 @@
 const CleanCSS = require("clean-css");
 
 module.exports = function (eleventyConfig) {
-  // eleventyConfig.setTemplateFormats([
-  //   "css" // css is not yet a recognized template extension in Eleventy
-  // ]);
-
-  // Copy over assets/ folder
+  // Copy over fonts/ folder
   eleventyConfig.addPassthroughCopy({
-    "src/presentations/fonts/": "./presentations/fonts/",
+    "src/fonts/": "./fonts/",
+  });
+
+  // Copy over images/ folder
+  eleventyConfig.addPassthroughCopy({
+    "src/images/": "./images/",
   });
 
   // https://www.11ty.dev/docs/quicktips/inline-css/

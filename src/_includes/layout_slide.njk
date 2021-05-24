@@ -1,10 +1,20 @@
 ---
 ---
 {% set css %}
+    {# Base #}
     {% include "../../node_modules/reveal.js/dist/reset.css" %}
     {% include "../../node_modules/reveal.js/dist/reveal.css" %}
+    
+    {# Fonts #}
+    {% include "../../node_modules/reveal.js/dist/theme/fonts/league-gothic/league-gothic.css" %}
+    {% include "../../node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css" %}
+
+    {# Slide Theme #}
     {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+
+    {# Syntax Highlighting Theme #}
     {% include "../../node_modules/reveal.js/plugin/highlight/monokai.css" %}
+
 {% endset %}
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +33,11 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/dist/reveal.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/markdown/markdown.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/highlight/highlight.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/notes/notes.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/search/search.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/math/math.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.1/plugin/zoom/zoom.js"></script>
 
         <script>
           let deck = new Reveal({
@@ -34,7 +46,7 @@
             overview: true,
             history: true,
             center: true,
-            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            plugins: [RevealHighlight, RevealNotes, RevealSearch, RevealZoom],
           });
           deck.initialize();
         </script>

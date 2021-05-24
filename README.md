@@ -25,12 +25,120 @@ npm run serve
 serves at
 
 ```
-http://localhost:8080/presentations/
+http://localhost:8080/
 ```
+
+## Making your Presentations
+
+### Slide Format
+
+- You can write your presentations in markdown, html, or any language that [Eleventy](https://www.11ty.dev/) supports.
+
+  > **Note about Markdown:** if you use Markdown, you still need to separate your slides using `<section>` elements. The markdown is translated to html using [Eleventy](https://www.11ty.dev/), **not** [RevealJS's markdown plugin](https://revealjs.com/markdown/). So using `---` to separate slides won't work.
+
+- Refer to [RevealJS's Docs](https://revealjs.com/markup/) for how to write your markup
+
+  - Basic example:
+    ```html
+    <section>Slide 1</section>
+    <section>Slide 2</section>
+    ```
+  - Nested example:
+    ```html
+    <section>Horizontal Slide</section>
+    <section>
+      <section>Vertical Slide 1</section>
+      <section>Vertical Slide 2</section>
+    </section>
+    ```
+  - Example with notes:
+    ```html
+    <section>
+      <h2>Some Slide</h2>
+      <aside class="notes">Shhh, these are your private notes 📝</aside>
+    </section>
+    ```
+
+### Plugins
+
+All of [RevealJS's built in plugins](https://revealjs.com/plugins/#built-in-plugins) are pulled in by default. You can manage this in the `src/_includes/layout_slide.njk` file
+
+You can also [make your own plugins](https://revealjs.com/creating-plugins/).
+
+Custom plugin example:
+
+```html
+<!-- in src/_includes/layout_slide.njk -->
+
+<!-- Here's an example plugin which shuffles all slides in a presentation when the T key is pressed -->
+
+<script>
+  function Toaster() {
+    return {
+      id: "toaster",
+      init: (deck) => {
+        deck.addKeyBinding({ keyCode: 84, key: "T" }, () => {
+          deck.shuffle();
+          console.log("🍻");
+        });
+      },
+    };
+  }
+
+  let deck = new Reveal({
+    controls: true,
+    progress: true,
+    overview: true,
+    history: true,
+    center: true,
+    plugins: [
+      RevealHighlight,
+      RevealNotes,
+      RevealSearch,
+      RevealMath,
+      RevealZoom,
+      Toaster, // You need to add your plugin to this array
+    ],
+  });
+  deck.initialize();
+</script>
+```
+
+If you want to get fancy, you can [pull in RevealJS from npm](https://revealjs.com/installation/#installing-from-npm) instead of from the cdn, but then you'll to have to deal with settup up JS bundling with Eleventy.
+
+### Theming
+
+> If you want to edit the styles of the home page (`src/index.html`), you can do so in `src/_includes/styles.css`.
+
+RevealJS has lots of different [themes](https://revealjs.com/themes/) you can choose from
+
+#### Slide Theme
+
+By default, the [slide theme](https://revealjs.com/themes/) is set to black. Each theme is a different stylesheet. If you would like to change your slide theme, you can edit the theme css import in the `layout_slide.njk` file
+
+```liquid
+{% set css %}
+    {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+{% endset %}
+
+```
+
+#### Syntax Highlighting theme
+
+By default, the [highlighting theme](https://revealjs.com/code/#theming) is set to monokai. Each theme is a different stylesheet. If you would like to change your syntax highlighting theme, you can edit its css import in the `layout_slide.njk` file.
+
+```liquid
+{% set css %}
+    {% include "../../node_modules/reveal.js/plugin/highlight/monokai.css" %}
+{% endset %}
+
+```
+
+A full list of available highlight themes can be found at https://highlightjs.org/static/demo/.
 
 ## Export to PDF
 
-[Docs](https://revealjs.com/pdf-export/)
+[Docs](https://revealjs.com/your-presentation/pdf-export/)
 
 1. Open your presentation with `print-pdf` included in the query string, for example: `http://localhost:8000/?print-pdf`. You can test this at `revealjs.com/demo?print-pdf`.
 2. Open the in-browser print dialog (`CTRL/CMD+P`).
