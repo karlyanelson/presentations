@@ -59,6 +59,31 @@ http://localhost:8080/
     </section>
     ```
 
+### Presentation Metadata
+
+Eleventy uses [frontmatter](https://www.11ty.dev/docs/data-frontmatter/) to manage data for each file/page.
+
+The following variables are required for each presentation if you want it to show up in the list in `src/index.html`:
+
+- `layout`
+- `title`
+- `tags`
+
+The `themeName` variable is optional. It's set to `black` by default.
+
+Example:
+
+```yaml
+# In src/demo-with-markdown/index.md
+---
+layout: layout_slide.njk # !required
+title: "Presentation Demo: Using Markdown" # !required
+tags: presentation # !required
+themeName: moon # optional
+---
+Content goes here
+```
+
 ### Plugins
 
 All of [RevealJS's built in plugins](https://revealjs.com/plugins/#built-in-plugins) are pulled in by default. You can manage this in the `src/_includes/layout_slide.njk` file
@@ -104,17 +129,31 @@ Custom plugin example:
 </script>
 ```
 
-If you want to get fancy, you can [pull in RevealJS from npm](https://revealjs.com/installation/#installing-from-npm) instead of from the cdn, but then you'll to have to deal with settup up JS bundling with Eleventy.
+If you want to get fancy, you can [pull in RevealJS from npm](https://revealjs.com/installation/#installing-from-npm) instead of from the cdn, but then you'll to have to deal with setting up Javascript bundling with Eleventy.
 
 ### Theming
 
 > If you want to edit the styles of the home page (`src/index.html`), you can do so in `src/_includes/styles.css`.
 
-RevealJS has lots of different [themes](https://revealjs.com/themes/) you can choose from
+RevealJS has lots of different [themes](https://revealjs.com/themes/) you can choose from.
 
 #### Slide Theme
 
-By default, the [slide theme](https://revealjs.com/themes/) is set to black. Each theme is a different stylesheet. If you would like to change your slide theme, you can edit the theme css import in the `layout_slide.njk` file
+By default, the [slide theme](https://revealjs.com/themes/) is set to black. Each theme is a different stylesheet.
+
+You can edit which themes are available in the css imports in `src/_includes/layout_slide.njk`.
+
+By default all of [RevealJS's default themes](https://revealjs.com/themes/) are included, and you can specify a specific theme for each presentation in that presentation file's frontmatter with the `themeName` variable. For example:
+
+```yaml
+# In src/demo-with-markdown/index.md
+---
+layout: layout_slide.njk
+title: "Presentation Demo: Using Markdown"
+tags: presentation
+themeName: moon
+---
+```
 
 ```liquid
 {% set css %}
@@ -122,6 +161,8 @@ By default, the [slide theme](https://revealjs.com/themes/) is set to black. Eac
 {% endset %}
 
 ```
+
+If you do not specify a `themeName`, the `black` theme is used by default.
 
 #### Syntax Highlighting theme
 
