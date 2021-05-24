@@ -25,7 +25,7 @@ npm run serve
 serves at
 
 ```
-http://localhost:8080/
+http://localhost:8080/presentations/
 ```
 
 ## Making your Presentations
