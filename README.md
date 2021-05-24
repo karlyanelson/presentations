@@ -1,6 +1,6 @@
 # Presentations
 
-Write your presentations in markdown and host them all in one place!
+Write your presentations in markdown or html and host them all in one place!
 
 Built with [Reveal.js](https://revealjs.com/) and [Eleventy](https://www.11ty.dev/).
 
@@ -139,9 +139,19 @@ RevealJS has lots of different [themes](https://revealjs.com/themes/) you can ch
 
 #### Slide Theme
 
-By default, the [slide theme](https://revealjs.com/themes/) is set to black. Each theme is a different stylesheet.
+By default, the [slide theme](https://revealjs.com/themes/) is set to black.
 
-You can edit which themes are available in the css imports in `src/_includes/layout_slide.njk`.
+Each theme is a different stylesheet. You can edit which themes are available in the css imports in `src/_includes/layout_slide.njk`.
+
+```liquid
+<!-- src/_includes/layout_slide.njk -->
+{% set css %}
+    ...
+    {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+    ...
+{% endset %}
+
+```
 
 By default all of [RevealJS's default themes](https://revealjs.com/themes/) are included, and you can specify a specific theme for each presentation in that presentation file's frontmatter with the `themeName` variable. For example:
 
@@ -153,13 +163,6 @@ title: "Presentation Demo: Using Markdown"
 tags: presentation
 themeName: moon
 ---
-```
-
-```liquid
-{% set css %}
-    {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
-{% endset %}
-
 ```
 
 If you do not specify a `themeName`, the `black` theme is used by default.
@@ -179,7 +182,7 @@ A full list of available highlight themes can be found at https://highlightjs.or
 
 ## Export to PDF
 
-[Docs](https://revealjs.com/your-presentation/pdf-export/)
+[RevealJS Docs](https://revealjs.com/your-presentation/pdf-export/)
 
 1. Open your presentation with `print-pdf` included in the query string, for example: `http://localhost:8000/?print-pdf`. You can test this at `revealjs.com/demo?print-pdf`.
 2. Open the in-browser print dialog (`CTRL/CMD+P`).
@@ -193,7 +196,7 @@ A full list of available highlight themes can be found at https://highlightjs.or
 
 ## Speaker Notes
 
-[Docs](https://revealjs.com/speaker-view/)
+[RevealJS Docs](https://revealjs.com/speaker-view/)
 
 reveal.js comes with a speaker notes plugin which can be used to present per-slide notes in a separate browser window. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven't written any notes. Press the »S« key on your keyboard to open the notes window.
 
