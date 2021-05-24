@@ -10,11 +10,38 @@
     {% include "../../node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css" %}
 
     {# Slide Theme #}
-    {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+    {% if themeName %}
+      {% if themeName === 'black' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+      {% elseif themeName === 'white' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/white.css" %}
+      {% elseif themeName === 'league' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/league.css" %}
+      {% elseif themeName === 'beige' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/beige.css" %}
+      {% elseif themeName === 'sky' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/sky.css" %}
+      {% elseif themeName === 'night' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/night.css" %}
+      {% elseif themeName === 'serif' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/serif.css" %}
+      {% elseif themeName === 'simple' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/simple.css" %}
+      {% elseif themeName === 'solarized' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/solarized.css" %}
+      {% elseif themeName === 'blood' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/blood.css" %}
+      {% elseif themeName === 'moon' %} 
+        {% include "../../node_modules/reveal.js/dist/theme/moon.css" %}
+      {% else %}
+        {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+      {% endif %}
+    {% else %}
+        {% include "../../node_modules/reveal.js/dist/theme/black.css" %}
+    {% endif %}
 
     {# Syntax Highlighting Theme #}
     {% include "../../node_modules/reveal.js/plugin/highlight/monokai.css" %}
-
 {% endset %}
 <!DOCTYPE html>
 <html lang="en">
