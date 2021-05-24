@@ -12,7 +12,7 @@ tags: presentation
 
 Content 1.1
 
-Note: This will only appear in the speaker notes window.
+<aside class="notes">Note: This will only appear in the speaker notes window.</aside>
 
 </section>
 
