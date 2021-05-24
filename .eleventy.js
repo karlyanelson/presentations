@@ -4,12 +4,12 @@ const CleanCSS = require("clean-css");
 module.exports = function (eleventyConfig) {
   // Copy over fonts/ folder
   eleventyConfig.addPassthroughCopy({
-    "src/fonts/": "./fonts/",
+    "src/presentations/fonts/": "./presentations/fonts/",
   });
 
   // Copy over images/ folder
   eleventyConfig.addPassthroughCopy({
-    "src/images/": "./images/",
+    "src/presentations/images/": "./presentations/images/",
   });
 
   // https://www.11ty.dev/docs/quicktips/inline-css/
