@@ -4,6 +4,8 @@ Write your presentations in markdown or html and host them all in one place!
 
 Built with [Reveal.js](https://revealjs.com/) and [Eleventy](https://www.11ty.dev/).
 
+<a target="_blank" href="https://app.netlify.com/start/deploy?repository=https://github.com/karlyanelson/presentations"> <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"> </a>
+
 ## Use this repo as a template
 
 [Copy this template](https://github.com/karlyanelson/presentations/generate)
