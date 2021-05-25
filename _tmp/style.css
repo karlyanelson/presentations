@@ -34,6 +34,39 @@
   }
 }
 
+.animate-link {
+  color: rgb(66, 175, 250);
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+}
+
+.animate-link svg {
+  fill: rgb(66, 175, 250);
+}
+
+.animate-link::after {
+  transition: all ease 300ms;
+  content: "";
+  height: 3px;
+  width: 0%;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  background: rgb(66, 175, 250);
+}
+
+.animate-link:hover,
+  .animate-link:focus {
+  background: rgba(66, 175, 250, 0.2);
+}
+
+.animate-link:hover::after,
+  .animate-link:focus::after {
+  width: 100%;
+}
+
 .tw-space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
@@ -31284,19 +31317,18 @@ body.home {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
-.animate-link {
+footer a {
   color: rgb(66, 175, 250);
   text-decoration: none;
   font-weight: 700;
   position: relative;
-  padding: 0.25rem 0.5rem;
 }
 
-.animate-link svg {
+footer a svg {
   fill: rgb(66, 175, 250);
 }
 
-.animate-link::after {
+footer a::after {
   transition: all ease 300ms;
   content: "";
   height: 3px;
@@ -31308,14 +31340,29 @@ body.home {
   background: rgb(66, 175, 250);
 }
 
-.animate-link:hover,
-.animate-link:focus {
+footer a:hover,
+  footer a:focus {
   background: rgba(66, 175, 250, 0.2);
 }
 
-.animate-link:hover::after,
-.animate-link:focus::after {
+.animate-link:hover,
+  .animate-link:focus {
+  background: rgba(66, 175, 250, 0.2);
+}
+
+footer a:hover::after,
+  footer a:focus::after {
   width: 100%;
+}
+
+.animate-link:hover::after,
+  .animate-link:focus::after {
+  width: 100%;
+}
+
+footer a {
+  display: inline-block;
+  padding: 0.25rem;
 }
 
 @media (min-width: 640px) {

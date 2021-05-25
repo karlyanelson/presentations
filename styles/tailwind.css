@@ -6,36 +6,41 @@ body.home {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
-.animate-link {
-  color: rgb(66, 175, 250);
-  text-decoration: none;
-  font-weight: 700;
-  position: relative;
-  padding: 0.25rem 0.5rem;
+@layer components {
+  .animate-link {
+    color: rgb(66, 175, 250);
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .animate-link svg {
+    fill: rgb(66, 175, 250);
+  }
+
+  .animate-link::after {
+    transition: all ease 300ms;
+    content: "";
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    background: rgb(66, 175, 250);
+  }
+
+  .animate-link:hover,
+  .animate-link:focus {
+    background: rgba(66, 175, 250, 0.2);
+  }
+
+  .animate-link:hover::after,
+  .animate-link:focus::after {
+    width: 100%;
+  }
 }
 
-.animate-link svg {
-  fill: rgb(66, 175, 250);
-}
-
-.animate-link::after {
-  transition: all ease 300ms;
-  content: "";
-  height: 3px;
-  width: 0%;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  right: 0;
-  background: rgb(66, 175, 250);
-}
-
-.animate-link:hover,
-.animate-link:focus {
-  background: rgba(66, 175, 250, 0.2);
-}
-
-.animate-link:hover::after,
-.animate-link:focus::after {
-  width: 100%;
+footer a {
+  @apply animate-link tw-inline-block tw-p-1;
 }
