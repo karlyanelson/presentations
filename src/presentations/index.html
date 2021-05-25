@@ -6,7 +6,7 @@ layout: layout_base.njk
     <h1 class="tw-text-3xl sm:tw-text-6xl tw-px-2">Karly's Presentations</h1>
 </header>
 <main class="tw-max-w-2xl tw-mx-auto  tw-my-16">
-    <ul >
+    <ul class="tw-text-rjs-action">
         {%- for presentation in collections.presentation -%}
         <li class="tw-my-4 tw-text-xl sm:tw-text-3xl">
             <a class="animate-link tw-inline-block tw-px-2 tw-py-1" href="{{ presentation.url }}"">{{ presentation.data.title }}</a>
@@ -14,9 +14,9 @@ layout: layout_base.njk
         {%- endfor -%}
     </ul>
 </main>
-<hr class="tw-mt-24 tw-opacity-50"/>
+<hr class="tw-mt-24 tw-opacity-25"/>
 <footer class="tw-max-w-2xl tw-mx-auto tw-text-center tw-pt-4">
-    <p>Built by <a target="_blank" href="https://karlynelson.com/">Karly</a> using <a target="_blank" href="https://revealjs.com/">Reveal.js</a> and <a target="_blank" href="https://www.11ty.dev/">Eleventy</a>.</p>
+    <p>Built by <a target="_blank" href="https://karlynelson.com/">Karly</a> using <a target="_blank" href="https://revealjs.com/">Reveal.js</a>, <a target="_blank" href="https://www.11ty.dev/">Eleventy</a>, and <a target="_blank" href="https://tailwindcss.com/">Tailwind</a>.</p>
     <p>
         <a class="tw-inline-flex tw-items-center" target="_blank" href="https://github.com/karlyanelson/presentations">
             <svg height="16" viewBox="0 0 16 16" aria-hidden="true">
