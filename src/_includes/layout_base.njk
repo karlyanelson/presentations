@@ -1,16 +1,11 @@
 ---
 ---
-{% set css %}
-    {% include "styles.css" %}
-{% endset %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>{% if title %}{{title}}, {% endif %}Presentations</title>      
         {% include "meta.html" %}
-        <style type="text/css">
-            {{ css | cssmin | safe }}
-        </style>
+        <link rel="stylesheet" href="/presentations/style.css?v={% version %}"/>
     </head>
     <body>
         {{ content | safe }}

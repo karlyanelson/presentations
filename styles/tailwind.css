@@ -1,4 +1,8 @@
-body {
+/* @import "tailwindcss/base"; */
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* body {
   background-color: #181818;
   color: #f1f1f1;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -43,16 +47,6 @@ a:focus::after {
   width: 100%;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin: 1rem 0;
-  font-size: 2rem;
-}
-
 .content-centered {
   max-width: 50rem;
   margin-left: auto;
@@ -77,4 +71,4 @@ footer {
 
 footer a {
   padding: 0.125rem;
-}
+} */

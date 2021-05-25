@@ -51,10 +51,11 @@
         <style type="text/css">
             {{ css | cssmin | safe }}
         </style>
+        <link rel="stylesheet" href="/presentations/style.css?v={% version %}"/>
     </head>
     <body>
         <div class="reveal">
-          <div class="slides">
+          <div class="slides" style="text-align: left;">
             {{ content | safe }}
           </div>
         </div>
