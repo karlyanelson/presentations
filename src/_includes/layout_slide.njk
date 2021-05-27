@@ -9,6 +9,7 @@
     {% include "../../node_modules/reveal.js/dist/theme/fonts/league-gothic/league-gothic.css" %}
     {% include "../../node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css" %}
 
+
     {# Slide Theme #}
     {% if themeName %}
       {% if themeName === 'black' %} 
@@ -51,6 +52,9 @@
         <style type="text/css">
             {{ css | cssmin | safe }}
         </style>
+        {# from https://chartscss.org/ #}
+        {% if charts%}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">{% endif %}
+        {# output from styles/tailwind.css #}
         <link rel="stylesheet" href="/presentations/style.css?v={% version %}"/>
     </head>
     <body>
