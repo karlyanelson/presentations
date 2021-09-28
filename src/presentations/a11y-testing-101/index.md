@@ -25,6 +25,10 @@ themeName: black
   footer {
     font-size: .5em;
   }
+
+  .small {
+    font-size: .875em;
+  }
   </style>
 
 <section>
@@ -55,9 +59,9 @@ themeName: black
 
 </section>
 
-<section>
+<section  class="small">
 
-“Following these guidelines will make content more accessible to a wider range of people with disabilities, including accommodations for **blindness** and **low vision**, **deafness** and **hearing loss**, **limited movement**, **speech disabilities**, **photosensitivity**, and **combinations** of these, and some accommodation for **learning disabilities and cognitive limitations**; but will not address every user need for people with these disabilities... Following these guidelines will also often make Web content _**more usable to users in general.**_”
+“Following these guidelines will make content more accessible to a wider range of people with disabilities, including accommodations for **blindness** and **low vision**, **deafness** and **hearing loss**, **limited movement**, **speech disabilities**, **photosensitivity**, and **combinations** of these, and some accommodation for **learning disabilities and cognitive limitations**, but will not address every user need for people with these disabilities... Following these guidelines will also often make Web content _**more usable to users in general.**_”
 
 [WCAG 2.1 Abstract](https://www.w3.org/TR/WCAG21/#abstract-0)
 
