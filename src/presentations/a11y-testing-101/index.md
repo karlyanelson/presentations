@@ -83,7 +83,9 @@ _Low vision, blindness_
 
 <section>
 
-## 2. **Zoom the browser** up to 200%
+## 2. **Zoom the browser**
+
+[(1.4.4 Resize Text)](https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html) says text needs to be able to be resized up to 200%, but [1.4.10](https://www.w3.org/WAI/WCAG21/Understanding/reflow.html) says the whole browser needs to be able to be zoomed up to 400% at 1280px. [See note for 1.4.4](https://webaim.org/standards/wcag/checklist#sc1.4.4)
 
 _Low vision, blindness_
 
@@ -93,7 +95,7 @@ _Low vision, blindness_
 
 ## 3. **Resize the browser** down to 320px
 
-[(1.4.10 Reflow)](https://www.w3.org/WAI/WCAG21/Understanding/reflow.html)
+_[(1.4.10 Reflow)](https://www.w3.org/WAI/WCAG21/Understanding/reflow.html)_
 
 _Low vision, blindness_
 
