@@ -4,6 +4,12 @@ Write your presentations in markdown or html and host them all in one place!
 
 Built with [Reveal.js](https://revealjs.com/) and [Eleventy](https://www.11ty.dev/).
 
+## For Me
+
+If switching between `main` template and `dev` or `prod` make sure to delete old `_site` folder.
+
+Go to `http://localhost:8081/presentations/` to see site because of subdirectory
+
 ## Use this repo as a template
 
 [Copy this template](https://github.com/karlyanelson/presentations/generate)
