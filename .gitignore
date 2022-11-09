@@ -16,3 +16,4 @@ dist/*.map
 dist/
 .cache
 _site/
+_tmp/
