@@ -1,6 +1,5 @@
 module.exports = {
-  purge: ["./src/**/*.html", "./src/**/*.md", "./src/**/*.njk"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./src/**/*.html", "./src/**/*.md", "./src/**/*.njk"],
   theme: { extend: { colors: { "rjs-action": "#42affa" } } },
   variants: {},
   plugins: [],
